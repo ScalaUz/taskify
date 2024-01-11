@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "src/main/scala/*"
+      ],
+      "@scalajs/*": ["target/js/*"]
+    }
+  }
+}

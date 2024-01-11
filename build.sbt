@@ -3,6 +3,7 @@ import org.scalajs.linker.interface.ModuleSplitStyle
 lazy val `task-management` = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin) // Enable the Scala.js plugin in this project
+  .enablePlugins(NextApp)
   .enablePlugins(JSDependenciesPlugin)
   .settings(
     scalaVersion := "2.13.10",
@@ -25,10 +26,7 @@ lazy val `task-management` = project
     /* Depend on the scalajs-dom library.
      * It provides static types for the browser DOM APIs.
      */
-    libraryDependencies ++= Seq(
-      "org.scala-js"                      %%% "scalajs-dom" % "2.4.0",
-      "com.github.japgolly.scalajs-react" %%% "core"        % "2.1.1",
-    ),
+
     jsDependencies ++= Seq(
       "org.webjars.npm" % "react" % "18.2.0"
         / "umd/react.development.js"
