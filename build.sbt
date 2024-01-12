@@ -1,5 +1,7 @@
 import org.scalajs.linker.interface.ModuleSplitStyle
 
+lazy val circeVersion = "0.14.1"
+
 lazy val taskify = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin) // Enable the Scala.js plugin in this project
@@ -12,8 +14,11 @@ lazy val taskify = project
         .withModuleSplitStyle(ModuleSplitStyle.SmallModulesFor(List("taskify")))
     },
     libraryDependencies ++= Seq(
-      "org.scala-js" %%% "scalajs-dom" % "2.4.0",
-      "com.raquo"    %%% "laminar"     % "15.0.1",
+      "org.scala-js" %%% "scalajs-dom"    % "2.4.0",
+      "com.raquo"    %%% "laminar"        % "16.0.0",
+      "com.raquo"    %%% "waypoint"       % "7.0.0",
+      "io.circe"     %%% s"circe-core"    % circeVersion,
+      "io.circe"     %%% s"circe-generic" % circeVersion,
     ),
   )
 Global / onChangedBuildSource := ReloadOnSourceChanges
