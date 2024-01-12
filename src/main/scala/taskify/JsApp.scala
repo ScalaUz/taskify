@@ -17,7 +17,7 @@ object JsApp extends App {
         onInput.mapToValue --> nameVar,
       ),
       p(
-        cls("text-3xl font-bold underline"),
+        cls("text-3xl font-bold text-blue-500 underline"),
         "Hello, ",
         child.text <-- nameVar.signal.map(_.toUpperCase),
       ),
