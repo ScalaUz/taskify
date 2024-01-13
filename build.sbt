@@ -22,3 +22,12 @@ lazy val taskify = project
     ),
   )
 Global / onChangedBuildSource := ReloadOnSourceChanges
+
+lazy val sonner = project
+  .enablePlugins(ScalablyTypedConverterPlugin)
+  .settings(
+    Compile / npmDependencies ++= Seq("sonner" -> "1.3.1"),
+    stUseScalaJsDom := false,
+    webpackDevServerPort := 4000,
+    useYarn := true
+  )
